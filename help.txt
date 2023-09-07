@@ -1,0 +1,35 @@
+cd C:\Users\Asus\Desktop\git\django
+virtualenv -p python3 DjangoEnv
+cd C:\Users\Asus\Desktop\git\django\virtualEnvs\DjangoEnv\Scripts
+activate
+pip install -U django
+django-admin startproject LibraryProject_Django
+--dirctory of project C:\Users\Asus\Desktop\git\django\virtualEnvs\DjangoEnv\Scripts\project1
+cd projectnamez
+python manage.py startapp app1
+python manage.py runserver
+python manage.py makemigrations
+python manage.py migrate
+python manage.py shell
+python manage.py createsuperuser
+----
+config after create app
+create urls.py in app directotry
+in project urls :
+from django.contrib import admin
+from django.urls import path
+from django.urls import include, re_path
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    re_path(r'^polls/', include('polls.urls')),
+]
+in app urls:
+from django.urls import path
+from django.urls import include, re_path
+from . import views
+app_name='polls'
+urlpatterns = [ 
+    re_path(r'^$',views.index,name='index'),
+
+]
+
