@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Book, Author, BookInstance, Genre
 from django.views.generic.base import TemplateView
+from django.views import generic
 ##for comment I use ctrl+k+c
 # def index(request): 
 #     """
@@ -33,3 +34,14 @@ class Index(TemplateView):
         context['num_instances_available'] =BookInstance.objects.filter(status__exact='a').count()
         context['num_authors'] =Author.objects.count() 
         return context
+
+
+class BookListView(generic.ListView):
+    model = Book
+    template_name='catalog/book_list.html'
+
+
+
+class BookDetailView(generic.DetailView):
+    model = Book
+    template_name='catalog/book_detail.html'
