@@ -2,6 +2,7 @@ cd C:\Users\Asus\Desktop\git\django
 virtualenv -p python3 DjangoEnv
 cd C:\Users\Asus\Desktop\git\django\virtualEnvs\DjangoEnv\Scripts
 activate
+cd C:\Users\Asus\Desktop\git\django\virtualEnvs\LibraryProject_Django>
 pip install -U django
 django-admin startproject LibraryProject_Django
 --dirctory of project C:\Users\Asus\Desktop\git\django\virtualEnvs\DjangoEnv\Scripts\project1
